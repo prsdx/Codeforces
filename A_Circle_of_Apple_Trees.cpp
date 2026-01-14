@@ -11,7 +11,7 @@ typedef long long ll;
 typedef vector<int> vi;
 
 void answertoProb()
-{
+{ 
     int n;
     cin>>n;
     vector<int> arr(n);
