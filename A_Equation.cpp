@@ -10,28 +10,12 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 
-bool iscomposite(int n)
-{
-    if(n==2)return false;
-    for(int i=2;i<n;i++)
-    {
-        if(n%i==0)return true;
-    }
-    return false;
-}
 
 int32_t main()
 {
     fastio();
     int t;
     cin >> t;
-    for(int i=2;(i+t)<=1000000000;i++)
-    {
-        if(iscomposite(i)&&iscomposite(i+t))
-        {
-            cout<<i+t<<" "<<i<<"\n";
-            return 0;
-        }
-    }
+    cout<<15*t<<" "<<14*t;
     return 0;
 }
