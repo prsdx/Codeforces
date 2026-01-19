@@ -10,26 +10,21 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 
-void answertoProb()
-{
+void answertoProb() {
     int n;
-    cin>>n;
-    vi arr(n+1);
-    for(int i=1;i<n+1;i++)cin>>arr[i];
-    bool curr_i=false;
-    int cntz=0;
-    ll sum=0;
-    for(int i=1;i<n;i++)
-    {
-        sum+=arr[i];
-        if(arr[i]>0)curr_i=true;
-        if(curr_i==true && arr[i]==0)
-        {
-            cntz++;
+    cin >> n;
+    vi arr(n); 
+    int j = 0;
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+        if(arr[i] > arr[j]) {
+            j = i;
         }
     }
-    // sum+=arr[n];
-    cout<<sum+cntz<<"\n";
+
+    ll max_val = arr[j]; 
+    cout << max_val * n << "\n"; 
 }
 
 int32_t main()

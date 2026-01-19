@@ -12,24 +12,14 @@ typedef vector<int> vi;
 
 void answertoProb()
 {
+ 
     int n;
     cin>>n;
-    vi arr(n+1);
-    for(int i=1;i<n+1;i++)cin>>arr[i];
-    bool curr_i=false;
-    int cntz=0;
-    ll sum=0;
-    for(int i=1;i<n;i++)
+    for(int i=1;i<=n;i++)
     {
-        sum+=arr[i];
-        if(arr[i]>0)curr_i=true;
-        if(curr_i==true && arr[i]==0)
-        {
-            cntz++;
-        }
+        cout<<i<<" ";
     }
-    // sum+=arr[n];
-    cout<<sum+cntz<<"\n";
+    cout<<"\n";
 }
 
 int32_t main()

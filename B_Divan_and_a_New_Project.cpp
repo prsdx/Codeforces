@@ -14,23 +14,40 @@ void answertoProb()
 {
     int n;
     cin>>n;
-    vi arr(n+1);
-    for(int i=1;i<n+1;i++)cin>>arr[i];
-    bool curr_i=false;
-    int cntz=0;
-    ll sum=0;
-    for(int i=1;i<n;i++)
+    vector<pair<int,int>>v;
+    for(int i=0;i<n;i++)
     {
-        sum+=arr[i];
-        if(arr[i]>0)curr_i=true;
-        if(curr_i==true && arr[i]==0)
-        {
-            cntz++;
-        }
+        int t;
+        cin>>t;
+        v.push_back({t,i});
     }
-    // sum+=arr[n];
-    cout<<sum+cntz<<"\n";
+    sort(v.begin(),v.end());
+    vi b(n);
+    ll curr=1;
+    ll time=0;
+    for(int i=n-1;i>=0;i--)
+    {
+        b[v[i].second]=curr;
+        time+=(2*(v[i].first*abs(curr)));
+        if(curr>0)
+        curr*=-1;
+        else
+        {
+            curr*=-1;
+            curr++;
+        }
+
+    }
+    cout<<time<<"\n";
+    cout<<0<<" ";
+    for(auto it:b)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
 }
+
+
 
 int32_t main()
 {
